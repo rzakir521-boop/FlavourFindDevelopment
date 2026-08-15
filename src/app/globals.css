@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ff-bg: hsl(40 30% 99%);
+  --ff-fg: hsl(20 25% 12%);
+  --ff-card: hsl(0 0% 100%);
+  --ff-card-fg: hsl(20 25% 12%);
+  --ff-primary: hsl(16 88% 52%);
+  --ff-primary-fg: hsl(40 40% 99%);
+  --ff-secondary: hsl(36 100% 96%);
+  --ff-secondary-fg: hsl(20 60% 30%);
+  --ff-muted: hsl(36 40% 95%);
+  --ff-muted-fg: hsl(20 12% 45%);
+  --ff-accent: hsl(28 95% 55%);
+  --ff-accent-fg: hsl(40 40% 99%);
+  --ff-destructive: hsl(0 84% 60%);
+  --ff-destructive-fg: hsl(0 0% 98%);
+  --ff-border: hsl(30 25% 90%);
+  --ff-input: hsl(30 25% 90%);
+  --ff-ring: hsl(16 88% 52%);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--ff-bg);
+  --color-foreground: var(--ff-fg);
+  --color-card: var(--ff-card);
+  --color-card-foreground: var(--ff-card-fg);
+  --color-primary: var(--ff-primary);
+  --color-primary-foreground: var(--ff-primary-fg);
+  --color-secondary: var(--ff-secondary);
+  --color-secondary-foreground: var(--ff-secondary-fg);
+  --color-muted: var(--ff-muted);
+  --color-muted-foreground: var(--ff-muted-fg);
+  --color-accent: var(--ff-accent);
+  --color-accent-foreground: var(--ff-accent-fg);
+  --color-destructive: var(--ff-destructive);
+  --color-destructive-foreground: var(--ff-destructive-fg);
+  --color-border: var(--ff-border);
+  --color-input: var(--ff-input);
+  --color-ring: var(--ff-ring);
+
+  --font-display: var(--font-heading);
+  --font-body: var(--font-body-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--ff-border);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--ff-bg);
+  color: var(--ff-fg);
+  font-family: var(--font-body-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.grain {
+  background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.04) 1px, transparent 0);
+  background-size: 24px 24px;
 }

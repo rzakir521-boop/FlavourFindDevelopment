@@ -11,13 +11,13 @@ function labelsFor(categoryId, selectedIds) {
     .map((o) => o.label);
 }
 
-function buildPrompt({ preferences, freeText }) {
+function buildPrompt({ location, preferences, freeText }) {
   const cravings = labelsFor("cravings", preferences?.cravings);
   const dietary = labelsFor("dietary", preferences?.dietary);
   const cuisine = labelsFor("cuisine", preferences?.cuisine);
 
   const lines = [
-    "Suggest real restaurants and takeaways in Camden, London that match the following diner preferences.",
+    `Suggest real restaurants and takeaways near "${location}" that match the following diner preferences.`,
     "",
     cravings.length ? `Flavour cravings: ${cravings.join(", ")}` : null,
     dietary.length ? `Dietary requirements: ${dietary.join(", ")}` : null,
@@ -42,22 +42,26 @@ export async function POST(request) {
     return Response.json({ error: "Invalid request body." }, { status: 400 });
   }
 
-  const { preferences, freeText } = body || {};
+  const { location, preferences, freeText } = body || {};
+
+  if (!location?.trim()) {
+    return Response.json({ error: "A location is required." }, { status: 400 });
+  }
 
   try {
     const response = await client.messages.create({
       model: "claude-sonnet-4-6",
       max_tokens: 2048,
       system:
-        "You are a knowledgeable local food guide for Camden, London. Given a diner's preferences, " +
-        "suggest 5 real restaurants or takeaways located in or very near Camden, London that genuinely fit. " +
+        "You are a knowledgeable local food guide. Given a diner's location and preferences, " +
+        "suggest 5 real restaurants or takeaways located in or very near that location that genuinely fit. " +
         "Respond with ONLY a JSON array (no markdown, no commentary) where each item has exactly these keys: " +
         '"name" (restaurant name), "food_type" (short cuisine/food type label), and "reasoning" (one short, ' +
         "friendly sentence on why it fits this diner's preferences).",
       messages: [
         {
           role: "user",
-          content: buildPrompt({ preferences, freeText }),
+          content: buildPrompt({ location, preferences, freeText }),
         },
       ],
     });

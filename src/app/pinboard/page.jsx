@@ -45,7 +45,7 @@ export default function PinBoard() {
 
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-10 sm:px-6 sm:py-14">
         <div className="mb-10 text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#F2541B]/20 bg-orange-50 px-4 py-1.5 text-sm font-semibold text-[#F2541B]">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#FFA500]/20 bg-orange-50 px-4 py-1.5 text-sm font-semibold text-[#FFA500]">
             <Sparkles className="h-4 w-4" />
             Community picks
           </div>
@@ -68,8 +68,8 @@ export default function PinBoard() {
                 onClick={() => setCuisineFilter(filter)}
                 className={`shrink-0 rounded-full border px-3.5 py-1.5 text-sm font-semibold transition-all active:scale-95 ${
                   cuisineFilter === filter
-                    ? "border-transparent bg-gradient-to-r from-[#FF6B2C] to-[#F2541B] text-white shadow-sm shadow-orange-500/30"
-                    : "border-border bg-card text-foreground hover:border-[#F2541B]/40"
+                    ? "border-transparent bg-gradient-to-r from-[#FFB84D] to-[#FFA500] text-white shadow-sm shadow-orange-500/30"
+                    : "border-border bg-card text-foreground hover:border-[#FFA500]/40"
                 }`}
               >
                 {filter}
@@ -99,7 +99,7 @@ export default function PinBoard() {
             <button
               type="button"
               onClick={() => setShowForm(true)}
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#FF6B2C] to-[#F2541B] px-5 py-2.5 text-sm font-bold text-white shadow-md shadow-orange-500/30 transition-all hover:brightness-105 active:scale-95"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#FFB84D] to-[#FFA500] px-5 py-2.5 text-sm font-bold text-white shadow-md shadow-orange-500/30 transition-all hover:brightness-105 active:scale-95"
             >
               <Plus className="h-4 w-4" />
               Add a pin

@@ -118,7 +118,7 @@ export default function CreatePinForm({ open, onClose, onSubmit }) {
               setForm((prev) => ({ ...prev, restaurantName: e.target.value }))
             }
             placeholder="e.g. Dishoom"
-            className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-base font-medium text-foreground outline-none transition-all placeholder:text-muted-foreground/70 focus:border-[#F2541B] focus:ring-4 focus:ring-orange-500/15"
+            className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-base font-medium text-foreground outline-none transition-all placeholder:text-muted-foreground/70 focus:border-[#FFA500] focus:ring-4 focus:ring-orange-500/15"
           />
         </div>
 
@@ -135,7 +135,7 @@ export default function CreatePinForm({ open, onClose, onSubmit }) {
                 setForm((prev) => ({ ...prev, area: e.target.value }))
               }
               placeholder="e.g. Shoreditch"
-              className="w-full rounded-2xl border border-border bg-background py-3 pl-10 pr-4 text-base font-medium text-foreground outline-none transition-all placeholder:text-muted-foreground/70 focus:border-[#F2541B] focus:ring-4 focus:ring-orange-500/15"
+              className="w-full rounded-2xl border border-border bg-background py-3 pl-10 pr-4 text-base font-medium text-foreground outline-none transition-all placeholder:text-muted-foreground/70 focus:border-[#FFA500] focus:ring-4 focus:ring-orange-500/15"
             />
           </div>
         </div>
@@ -151,7 +151,7 @@ export default function CreatePinForm({ open, onClose, onSubmit }) {
             }
             placeholder="What did you love about it?"
             rows={3}
-            className="w-full resize-none rounded-2xl border border-border bg-background px-4 py-3 text-base font-medium text-foreground outline-none transition-all placeholder:text-muted-foreground/70 focus:border-[#F2541B] focus:ring-4 focus:ring-orange-500/15"
+            className="w-full resize-none rounded-2xl border border-border bg-background px-4 py-3 text-base font-medium text-foreground outline-none transition-all placeholder:text-muted-foreground/70 focus:border-[#FFA500] focus:ring-4 focus:ring-orange-500/15"
           />
         </div>
 
@@ -169,8 +169,8 @@ export default function CreatePinForm({ open, onClose, onSubmit }) {
                   onClick={() => toggleCuisine(c)}
                   className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition-all active:scale-95 ${
                     selected
-                      ? "border-transparent bg-gradient-to-r from-[#FF6B2C] to-[#F2541B] text-white shadow-sm"
-                      : "border-border bg-background text-foreground hover:border-[#F2541B]/40"
+                      ? "border-transparent bg-gradient-to-r from-[#FFB84D] to-[#FFA500] text-white shadow-sm"
+                      : "border-border bg-background text-foreground hover:border-[#FFA500]/40"
                   }`}
                 >
                   {c}
@@ -193,7 +193,7 @@ export default function CreatePinForm({ open, onClose, onSubmit }) {
         <button
           type="submit"
           disabled={!canSubmit}
-          className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#FF6B2C] to-[#F2541B] py-3.5 text-base font-bold text-white shadow-md shadow-orange-500/30 transition-all hover:brightness-105 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#FFB84D] to-[#FFA500] py-3.5 text-base font-bold text-white shadow-md shadow-orange-500/30 transition-all hover:brightness-105 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50"
         >
           <Send className="h-4 w-4" />
           Share your pin

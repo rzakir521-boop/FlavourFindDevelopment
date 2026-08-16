@@ -15,14 +15,14 @@ export default function Home() {
 
         <div className="relative mx-auto max-w-6xl px-4 pb-20 pt-16 sm:px-6 sm:pt-24">
           <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#F2541B]/20 bg-orange-50 px-4 py-1.5 text-sm font-semibold text-[#F2541B]">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#FFA500]/20 bg-orange-50 px-4 py-1.5 text-sm font-semibold text-[#FFA500]">
               <Sparkles className="h-4 w-4" />
               AI-powered food discovery
             </div>
 
             <h1 className="font-display text-5xl font-extrabold leading-[1.05] tracking-tight text-foreground sm:text-7xl" style={{ textWrap: "balance" }}>
               Find your perfect
-              <span className="block bg-gradient-to-r from-[#FF6B2C] via-[#F2541B] to-[#E03A0E] bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-[#FFB84D] via-[#FFA500] to-[#E69500] bg-clip-text text-transparent">
                 restaurant in seconds
               </span>
             </h1>
@@ -36,7 +36,7 @@ export default function Home() {
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link
                 href="/find"
-                className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#FF6B2C] to-[#F2541B] px-7 py-4 text-base font-bold text-white shadow-lg shadow-orange-500/30 transition-all hover:shadow-xl hover:shadow-orange-500/40 hover:brightness-105 active:scale-95 sm:w-auto"
+                className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#FFB84D] to-[#FFA500] px-7 py-4 text-base font-bold text-white shadow-lg shadow-orange-500/30 transition-all hover:shadow-xl hover:shadow-orange-500/40 hover:brightness-105 active:scale-95 sm:w-auto"
               >
                 <Wand2 className="h-5 w-5" />
                 Find Food
@@ -56,7 +56,7 @@ export default function Home() {
                 Allergy-safe filtering
               </span>
               <span className="inline-flex items-center gap-1.5">
-                <Clock className="h-4 w-4 text-[#F2541B]" />
+                <Clock className="h-4 w-4 text-[#FFA500]" />
                 Decisions in seconds, not minutes
               </span>
               <span className="inline-flex items-center gap-1.5">
@@ -108,7 +108,7 @@ export default function Home() {
                   {s.step}
                 </span>
                 <div className="relative">
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#FF6B2C] to-[#F2541B] text-white shadow-md shadow-orange-500/30">
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#FFB84D] to-[#FFA500] text-white shadow-md shadow-orange-500/30">
                     <s.icon className="h-6 w-6" />
                   </div>
                   <h3 className="font-display text-xl font-bold text-foreground">{s.title}</h3>
@@ -121,7 +121,7 @@ export default function Home() {
           <div className="mt-12 text-center">
             <Link
               href="/find"
-              className="group inline-flex items-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-base font-bold text-background transition-all hover:bg-[#F2541B] hover:text-white active:scale-95"
+              className="group inline-flex items-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-base font-bold text-background transition-all hover:bg-[#FFA500] hover:text-white active:scale-95"
             >
               Try it now
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />

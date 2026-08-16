@@ -31,7 +31,7 @@ export default function LocationInput({ value, onChange }) {
   return (
     <div className="space-y-3">
       <div className="flex items-start gap-3">
-        <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-secondary text-[#F2541B]">
+        <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-secondary text-[#FFA500]">
           <MapPin className="h-5 w-5" />
         </div>
         <div>
@@ -52,7 +52,7 @@ export default function LocationInput({ value, onChange }) {
             value={value}
             onChange={(e) => onChange(e.target.value)}
             placeholder="e.g. Shoreditch, London or M1 5AA"
-            className="w-full rounded-2xl border border-border bg-card py-3.5 pl-12 pr-4 text-base font-medium text-foreground shadow-sm outline-none transition-all placeholder:text-muted-foreground/70 focus:border-[#F2541B] focus:ring-4 focus:ring-orange-500/15"
+            className="w-full rounded-2xl border border-border bg-card py-3.5 pl-12 pr-4 text-base font-medium text-foreground shadow-sm outline-none transition-all placeholder:text-muted-foreground/70 focus:border-[#FFA500] focus:ring-4 focus:ring-orange-500/15"
           />
         </div>
 
@@ -66,7 +66,7 @@ export default function LocationInput({ value, onChange }) {
           type="button"
           onClick={detectLocation}
           disabled={detecting}
-          className="inline-flex items-center justify-center gap-2 rounded-2xl border border-dashed border-[#F2541B]/40 bg-orange-50/50 py-3 text-sm font-semibold text-[#F2541B] transition-all hover:border-[#F2541B] hover:bg-orange-50 disabled:opacity-60"
+          className="inline-flex items-center justify-center gap-2 rounded-2xl border border-dashed border-[#FFA500]/40 bg-orange-50/50 py-3 text-sm font-semibold text-[#FFA500] transition-all hover:border-[#FFA500] hover:bg-orange-50 disabled:opacity-60"
         >
           {detecting ? (
             <>

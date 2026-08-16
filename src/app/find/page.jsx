@@ -89,7 +89,7 @@ export default function Find() {
 
       <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-10 sm:px-6 sm:py-14">
         <div className="mb-10 text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#F2541B]/20 bg-orange-50 px-4 py-1.5 text-sm font-semibold text-[#F2541B]">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#FFA500]/20 bg-orange-50 px-4 py-1.5 text-sm font-semibold text-[#FFA500]">
             <Sparkles className="h-4 w-4" />
             Let&apos;s find your match
           </div>
@@ -140,7 +140,7 @@ export default function Find() {
               type="button"
               onClick={handleSearch}
               disabled={!canSearch || loading}
-              className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#FF6B2C] to-[#F2541B] px-6 py-3 text-sm font-bold text-white shadow-md shadow-orange-500/30 transition-all hover:brightness-105 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50 sm:flex-none"
+              className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#FFB84D] to-[#FFA500] px-6 py-3 text-sm font-bold text-white shadow-md shadow-orange-500/30 transition-all hover:brightness-105 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50 sm:flex-none"
             >
               {loading ? (
                 <>
@@ -160,7 +160,7 @@ export default function Find() {
         {loading && (
           <div className="mt-16 flex flex-col items-center justify-center text-center">
             <div className="relative mb-6">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-[#FF6B2C] to-[#F2541B] shadow-lg shadow-orange-500/30">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-[#FFB84D] to-[#FFA500] shadow-lg shadow-orange-500/30">
                 <Utensils className="h-9 w-9 text-white" />
               </div>
               <div className="absolute inset-0 animate-ping rounded-full bg-orange-400/30" />
@@ -178,7 +178,7 @@ export default function Find() {
             <p className="font-display text-lg font-bold text-foreground">{error}</p>
             <button
               onClick={handleSearch}
-              className="mt-4 inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition-all hover:bg-[#F2541B] hover:text-white"
+              className="mt-4 inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition-all hover:bg-[#FFA500] hover:text-white"
             >
               <RotateCcw className="h-4 w-4" />
               Try again
@@ -206,7 +206,7 @@ export default function Find() {
             <div className="mt-8 text-center">
               <button
                 onClick={handleSearch}
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition-all hover:border-[#F2541B]/40 hover:bg-secondary"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition-all hover:border-[#FFA500]/40 hover:bg-secondary"
               >
                 <RotateCcw className="h-4 w-4" />
                 Regenerate recommendations

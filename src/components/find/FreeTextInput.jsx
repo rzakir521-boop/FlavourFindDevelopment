@@ -6,7 +6,7 @@ export default function FreeTextInput({ value, onChange }) {
   return (
     <div className="space-y-3">
       <div className="flex items-start gap-3">
-        <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-secondary text-[#F2541B]">
+        <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-secondary text-[#FFA500]">
           <MessageSquare className="h-5 w-5" />
         </div>
         <div>
@@ -25,7 +25,7 @@ export default function FreeTextInput({ value, onChange }) {
           onChange={(e) => onChange(e.target.value)}
           placeholder="e.g. I want somewhere cosy with outdoor seating and a good wine list, ideally under £30 a head"
           rows={3}
-          className="w-full resize-none rounded-2xl border border-border bg-card px-4 py-3.5 text-base font-medium text-foreground shadow-sm outline-none transition-all placeholder:text-muted-foreground/70 focus:border-[#F2541B] focus:ring-4 focus:ring-orange-500/15"
+          className="w-full resize-none rounded-2xl border border-border bg-card px-4 py-3.5 text-base font-medium text-foreground shadow-sm outline-none transition-all placeholder:text-muted-foreground/70 focus:border-[#FFA500] focus:ring-4 focus:ring-orange-500/15"
         />
       </div>
     </div>

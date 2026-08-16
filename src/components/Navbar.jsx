@@ -10,14 +10,14 @@ export default function Navbar() {
         <nav className="flex items-center gap-2 sm:gap-3">
           <Link
             href="/pinboard"
-            className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition-all hover:border-[#F2541B]/40 hover:bg-secondary"
+            className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition-all hover:border-[#FFA500]/40 hover:bg-secondary"
           >
             <LayoutGrid className="h-4 w-4" />
             <span className="hidden sm:inline">Pin Board</span>
           </Link>
           <Link
             href="/find"
-            className="group inline-flex items-center gap-1.5 rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background transition-all hover:bg-[#F2541B] hover:text-white hover:shadow-lg hover:shadow-orange-500/30"
+            className="group inline-flex items-center gap-1.5 rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background transition-all hover:bg-[#FFA500] hover:text-white hover:shadow-lg hover:shadow-orange-500/30"
           >
             <Sparkles className="h-4 w-4" />
             Find Food

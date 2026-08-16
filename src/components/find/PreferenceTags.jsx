@@ -10,7 +10,7 @@ export default function PreferenceTags({ category, selected, onToggle }) {
   return (
     <div className="space-y-3">
       <div className="flex items-start gap-3">
-        <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-secondary text-[#F2541B]">
+        <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-secondary text-[#FFA500]">
           <Icon className="h-5 w-5" />
         </div>
         <div>
@@ -31,8 +31,8 @@ export default function PreferenceTags({ category, selected, onToggle }) {
               onClick={() => onToggle(category.id, opt.id)}
               className={`rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-200 active:scale-95 ${
                 isSelected
-                  ? "border-transparent bg-gradient-to-r from-[#FF6B2C] to-[#F2541B] text-white shadow-md shadow-orange-500/30"
-                  : "border-border bg-card text-foreground hover:border-[#F2541B]/40 hover:bg-secondary"
+                  ? "border-transparent bg-gradient-to-r from-[#FFB84D] to-[#FFA500] text-white shadow-md shadow-orange-500/30"
+                  : "border-border bg-card text-foreground hover:border-[#FFA500]/40 hover:bg-secondary"
               }`}
             >
               {opt.label}

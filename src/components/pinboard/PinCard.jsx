@@ -30,7 +30,7 @@ export default function PinCard({ pin }) {
   };
 
   return (
-    <div className="group break-inside-avoid rounded-3xl border border-border bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#F2541B]/30 hover:shadow-lg hover:shadow-orange-500/10">
+    <div className="group break-inside-avoid rounded-3xl border border-border bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FFA500]/30 hover:shadow-lg hover:shadow-orange-500/10">
       <div className="mb-3 flex items-start justify-between gap-2">
         <div className="min-w-0">
           <h3 className="font-display text-lg font-bold leading-tight text-foreground">
@@ -48,7 +48,7 @@ export default function PinCard({ pin }) {
         {pin.cuisineTags.map((tag) => (
           <span
             key={tag}
-            className="rounded-full border border-[#F2541B]/20 bg-orange-50 px-2.5 py-0.5 text-xs font-semibold text-[#F2541B]"
+            className="rounded-full border border-[#FFA500]/20 bg-orange-50 px-2.5 py-0.5 text-xs font-semibold text-[#FFA500]"
           >
             {tag}
           </span>

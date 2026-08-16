@@ -46,7 +46,7 @@ async function saveResultsToCache(cacheKey, results) {
 
   const { error } = await supabase
     .from(CACHE_TABLE)
-    .upsert({ query_key: cacheKey, results, expires_at }, { onConflict: "query_key" });
+    .upsert({ query_key: cacheKey, results, expires_at: expiresAt }, { onConflict: "query_key" });
 
   if (error) {
     console.error("places cache write error:", error);

@@ -1,7 +1,5 @@
-import Anthropic from "@anthropic-ai/sdk";
 import { PREFERENCE_CATEGORIES } from "@/components/find/preferenceData";
-
-const client = new Anthropic();
+import { searchRestaurants } from "@/lib/googlePlaces";
 
 function labelsFor(categoryId, selectedIds) {
   const category = PREFERENCE_CATEGORIES.find((c) => c.id === categoryId);
@@ -11,27 +9,27 @@ function labelsFor(categoryId, selectedIds) {
     .map((o) => o.label);
 }
 
-function buildPrompt({ location, preferences, freeText }) {
+const COORD_PATTERN = /^(-?\d+(?:\.\d+)?),\s*(-?\d+(?:\.\d+)?)/;
+
+function parseCoords(location) {
+  const match = location?.match(COORD_PATTERN);
+  if (!match) return null;
+  return { lat: parseFloat(match[1]), lng: parseFloat(match[2]) };
+}
+
+function buildTextQuery({ location, preferences, freeText, coords }) {
   const cravings = labelsFor("cravings", preferences?.cravings);
   const dietary = labelsFor("dietary", preferences?.dietary);
   const cuisine = labelsFor("cuisine", preferences?.cuisine);
 
-  const lines = [
-    `Suggest real restaurants and takeaways near "${location}" that match the following diner preferences.`,
-    "",
-    cravings.length ? `Flavour cravings: ${cravings.join(", ")}` : null,
-    dietary.length ? `Dietary requirements: ${dietary.join(", ")}` : null,
-    cuisine.length ? `Preferred cuisines: ${cuisine.join(", ")}` : null,
-    freeText?.trim() ? `Additional details from the diner: ${freeText.trim()}` : null,
-  ].filter(Boolean);
+  const parts = [];
+  parts.push(cuisine.length ? cuisine.join(" or ") + " restaurants" : "restaurants");
+  if (dietary.length) parts.push(dietary.join(", ") + " friendly");
+  if (cravings.length) parts.push("with " + cravings.join(", ") + " flavours");
+  if (freeText?.trim()) parts.push(freeText.trim());
+  if (!coords) parts.push("near " + location);
 
-  return lines.join("\n");
-}
-
-function extractJson(text) {
-  const fenced = text.match(/```(?:json)?\s*([\s\S]*?)```/i);
-  const raw = fenced ? fenced[1] : text;
-  return JSON.parse(raw.trim());
+  return parts.join(" ");
 }
 
 export async function POST(request) {
@@ -48,35 +46,12 @@ export async function POST(request) {
     return Response.json({ error: "A location is required." }, { status: 400 });
   }
 
+  const coords = parseCoords(location);
+  const textQuery = buildTextQuery({ location, preferences, freeText, coords });
+
   try {
-    const response = await client.messages.create({
-      model: "claude-sonnet-4-6",
-      max_tokens: 2048,
-      system:
-        "You are a knowledgeable local food guide. Given a diner's location and preferences, " +
-        "suggest 5 real restaurants or takeaways located in or very near that location that genuinely fit. " +
-        "Respond with ONLY a JSON array (no markdown, no commentary) where each item has exactly these keys: " +
-        '"name" (restaurant name), "food_type" (short cuisine/food type label), and "reasoning" (one short, ' +
-        "friendly sentence on why it fits this diner's preferences).",
-      messages: [
-        {
-          role: "user",
-          content: buildPrompt({ location, preferences, freeText }),
-        },
-      ],
-    });
-
-    const textBlock = response.content.find((b) => b.type === "text");
-    if (!textBlock) {
-      throw new Error("No text response from model");
-    }
-
-    const suggestions = extractJson(textBlock.text);
-    if (!Array.isArray(suggestions)) {
-      throw new Error("Model response was not a JSON array");
-    }
-
-    return Response.json({ suggestions });
+    const { results } = await searchRestaurants({ textQuery, coords });
+    return Response.json({ suggestions: results });
   } catch (error) {
     console.error("recommend route error:", error);
     return Response.json(

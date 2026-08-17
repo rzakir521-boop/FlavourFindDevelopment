@@ -1,4 +1,5 @@
 import { Bricolage_Grotesque, Plus_Jakarta_Sans } from "next/font/google";
+import ServiceWorkerRegister from "@/components/ServiceWorkerRegister";
 import "./globals.css";
 
 const heading = Bricolage_Grotesque({
@@ -17,12 +18,24 @@ export const metadata = {
   title: "FlavourFind — Find your perfect restaurant in seconds",
   description:
     "AI-powered food discovery. Tell us your cravings, dietary needs and cuisine, and we'll find your perfect restaurant in seconds.",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "FlavourFind",
+  },
+};
+
+export const viewport = {
+  themeColor: "#FFA500",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${heading.variable} ${body.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <ServiceWorkerRegister />
+      </body>
     </html>
   );
 }

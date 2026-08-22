@@ -9,11 +9,11 @@ const ICON_PROPS = {
 function PizzaSlice(props) {
   return (
     <svg viewBox="0 0 64 64" {...ICON_PROPS} {...props}>
-      <path d="M10 14 L54 10 Q58 10 56 14 L26 58 Q23 62 21 58 L10 18 Q9 15 10 14 Z" />
+      <path d="M10 14 L54 10 Q58 10 56 14 L26 56 Q23 61 21 57 L10 18 Q9 15 10 14 Z" />
       <path d="M14 20 Q32 26 50 15" />
       <circle cx="26" cy="26" r="4" />
       <circle cx="34" cy="38" r="4" />
-      <path d="M23 52 L20 58" />
+      <path d="M22 54 Q18 57 21 61" />
     </svg>
   );
 }
@@ -37,10 +37,11 @@ function Taco(props) {
     <svg viewBox="0 0 64 64" {...ICON_PROPS} {...props}>
       <path d="M4 32 Q10 6 32 6 Q54 6 60 32" />
       <path d="M8 30 Q12 26 16 30 Q20 26 24 30 Q28 26 32 30 Q36 26 40 30 Q44 26 48 30 Q52 26 56 30" />
+      <path d="M10 28 Q32 38 54 28" />
       <path d="M6 32 Q32 44 58 32" />
-      <path d="M22 34 L22 40" />
-      <path d="M32 36 L32 42" />
-      <path d="M42 34 L42 40" />
+      <path d="M22 32 L22 39" />
+      <path d="M32 34 L32 41" />
+      <path d="M42 32 L42 39" />
     </svg>
   );
 }
@@ -77,9 +78,9 @@ function Burger(props) {
 function Sandwich(props) {
   return (
     <svg viewBox="0 0 64 64" {...ICON_PROPS} {...props}>
-      <path d="M10 30 L32 6 L54 30 Z" />
-      <path d="M8 32 Q32 40 56 32" />
-      <path d="M12 36 L34 58 L52 36 Z" />
+      <path d="M8 28 L30 4 L52 28 Z" />
+      <path d="M6 30 Q29 38 54 30" />
+      <path d="M12 34 L36 58 L56 34 Z" />
     </svg>
   );
 }

@@ -3,7 +3,6 @@
 import { useState, useMemo } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import FoodBackground from "@/components/FoodBackground";
 import PinCard from "@/components/pinboard/PinCard";
 import CreatePinForm from "@/components/pinboard/CreatePinForm";
 import { SAMPLE_PINS, CUISINE_FILTERS } from "@/components/pinboard/pinData";
@@ -41,11 +40,10 @@ export default function PinBoard() {
   };
 
   return (
-    <div className="relative flex min-h-screen flex-col overflow-hidden">
+    <div className="flex min-h-screen flex-col">
       <Navbar />
-      <FoodBackground />
 
-      <main className="relative mx-auto w-full max-w-6xl flex-1 px-4 py-10 sm:px-6 sm:py-14">
+      <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-10 sm:px-6 sm:py-14">
         <div className="mb-10 text-center">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#FFA500]/20 bg-orange-50 px-4 py-1.5 text-sm font-semibold text-[#FFA500]">
             <Sparkles className="h-4 w-4" />

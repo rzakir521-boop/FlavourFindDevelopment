@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FoodBackground from "@/components/FoodBackground";
 import { Sparkles, ArrowRight, MapPin, SlidersHorizontal, Wand2, ShieldCheck, Clock, Heart } from "lucide-react";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
         <div className="absolute inset-0 grain opacity-60" />
         <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-orange-200/40 blur-3xl" />
         <div className="absolute -right-24 top-40 h-80 w-80 rounded-full bg-amber-200/40 blur-3xl" />
+        <FoodBackground />
 
         <div className="relative mx-auto max-w-6xl px-4 pb-20 pt-16 sm:px-6 sm:pt-24">
           <div className="mx-auto max-w-3xl text-center">

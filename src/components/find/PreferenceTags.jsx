@@ -19,6 +19,13 @@ export default function PreferenceTags({ category, selected, onToggle }) {
     );
   }, [query, category.options, selected]);
 
+  const examples = useMemo(() => {
+    const unselected = category.options.filter((o) => !selected.includes(o.id));
+    const count = Math.min(5, unselected.length);
+    const step = Math.max(1, Math.floor(unselected.length / count));
+    return Array.from({ length: count }, (_, i) => unselected[i * step]).filter(Boolean);
+  }, [category.options, selected]);
+
   return (
     <div className="space-y-3">
       <div className="flex items-start gap-3">
@@ -91,10 +98,22 @@ export default function PreferenceTags({ category, selected, onToggle }) {
             </p>
           )
         ) : (
-          selectedOptions.length === 0 && (
-            <p className="text-sm text-muted-foreground/70">
-              Start typing to see options — e.g. &quot;{category.options[0]?.label.toLowerCase()}&quot;.
-            </p>
+          examples.length > 0 && (
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60">
+                Try
+              </span>
+              {examples.map((opt) => (
+                <button
+                  key={opt.id}
+                  type="button"
+                  onClick={() => onToggle(category.id, opt.id)}
+                  className="rounded-full border border-dashed border-border bg-transparent px-3.5 py-1.5 text-sm font-semibold text-muted-foreground transition-all duration-200 hover:scale-[1.04] hover:border-[#FFA500]/40 hover:bg-secondary hover:text-foreground active:scale-95"
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
           )
         )}
       </div>

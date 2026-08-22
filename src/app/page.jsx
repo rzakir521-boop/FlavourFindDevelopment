@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Reveal from "@/components/Reveal";
 import { Sparkles, ArrowRight, MapPin, SlidersHorizontal, Wand2, ShieldCheck, Clock, Heart } from "lucide-react";
 
 export default function Home() {
@@ -21,7 +22,7 @@ export default function Home() {
         <div className="absolute -right-24 top-40 h-96 w-96 rounded-full bg-amber-300/40 blur-3xl" />
 
         <div className="relative mx-auto max-w-6xl px-4 pb-20 pt-16 sm:px-6 sm:pt-24">
-          <div className="mx-auto max-w-3xl text-center">
+          <Reveal className="mx-auto max-w-3xl text-center">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#FFA500]/20 bg-orange-50 px-4 py-1.5 text-sm font-semibold text-[#FFA500]">
               <Sparkles className="h-4 w-4" />
               AI-powered food discovery
@@ -71,20 +72,20 @@ export default function Home() {
                 Inclusive of every diet
               </span>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       <section id="how" className="border-t border-border/60 bg-secondary/30">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-          <div className="mb-12 text-center">
+          <Reveal className="mb-12 text-center">
             <h2 className="font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Three steps to your next meal
             </h2>
             <p className="mx-auto mt-3 max-w-lg text-muted-foreground">
               No more endless scrolling. Just tell us what you&apos;re craving and let the AI do the thinking.
             </p>
-          </div>
+          </Reveal>
 
           <div className="grid gap-6 sm:grid-cols-3">
             {[
@@ -106,26 +107,25 @@ export default function Home() {
                 title: "Discover venues",
                 desc: "Get curated cards with match scores and a personal note on why each fits.",
               },
-            ].map((s) => (
-              <div
-                key={s.step}
-                className="group relative overflow-hidden rounded-3xl border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:shadow-lg"
-              >
-                <span className="absolute right-5 top-4 font-display text-5xl font-extrabold text-secondary-foreground/15">
-                  {s.step}
-                </span>
-                <div className="relative">
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#FFC247] to-[#FFA500] text-white shadow-md shadow-orange-500/30">
-                    <s.icon className="h-6 w-6" />
+            ].map((s, i) => (
+              <Reveal key={s.step} delay={i * 100}>
+                <div className="group relative overflow-hidden rounded-3xl border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:border-[#FFA500]/30 hover:shadow-lg hover:shadow-orange-500/10 focus-within:-translate-y-1 focus-within:shadow-lg">
+                  <span className="absolute right-5 top-4 font-display text-5xl font-extrabold text-secondary-foreground/15">
+                    {s.step}
+                  </span>
+                  <div className="relative">
+                    <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#FFC247] to-[#FFA500] text-white shadow-md shadow-orange-500/30 transition-transform group-hover:scale-105">
+                      <s.icon className="h-6 w-6" />
+                    </div>
+                    <h3 className="font-display text-xl font-bold text-foreground">{s.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
                   </div>
-                  <h3 className="font-display text-xl font-bold text-foreground">{s.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
 
-          <div className="mt-12 text-center">
+          <Reveal className="mt-12 text-center">
             <Link
               href="/find"
               className="group inline-flex items-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-base font-bold text-background transition-all hover:bg-[#FFA500] hover:text-white active:scale-95"
@@ -133,7 +133,7 @@ export default function Home() {
               Try it now
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
-          </div>
+          </Reveal>
         </div>
       </section>
 

@@ -12,7 +12,7 @@ export default function RecommendationCard({ restaurant, index }) {
 
   return (
     <div
-      className="group relative overflow-hidden rounded-3xl border border-border bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FFA500]/30 hover:shadow-xl hover:shadow-orange-500/10 sm:p-6"
+      className="group relative overflow-hidden rounded-3xl border border-border bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FFA500]/30 hover:shadow-xl hover:shadow-orange-500/10 focus-within:-translate-y-1 focus-within:shadow-xl animate-fade-in-up sm:p-6"
       style={{ animationDelay: `${index * 80}ms` }}
     >
       <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br from-orange-100 to-amber-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

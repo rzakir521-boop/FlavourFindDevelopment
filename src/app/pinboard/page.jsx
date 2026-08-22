@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Reveal from "@/components/Reveal";
 import PinCard from "@/components/pinboard/PinCard";
 import CreatePinForm from "@/components/pinboard/CreatePinForm";
 import { SAMPLE_PINS, CUISINE_FILTERS } from "@/components/pinboard/pinData";
@@ -44,7 +45,7 @@ export default function PinBoard() {
       <Navbar />
 
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-10 sm:px-6 sm:py-14">
-        <div className="mb-10 text-center">
+        <Reveal className="mb-10 text-center">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#FFA500]/20 bg-orange-50 px-4 py-1.5 text-sm font-semibold text-[#FFA500]">
             <Sparkles className="h-4 w-4" />
             Community picks
@@ -56,9 +57,9 @@ export default function PinBoard() {
             Real recommendations from real people. Share your favourites and
             discover hidden gems.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <Reveal delay={100} className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-2 overflow-x-auto pb-1">
             <SlidersHorizontal className="h-4 w-4 shrink-0 text-muted-foreground" />
             {CUISINE_FILTERS.map((filter) => (
@@ -105,18 +106,18 @@ export default function PinBoard() {
               Add a pin
             </button>
           </div>
-        </div>
+        </Reveal>
 
         {filtered.length > 0 ? (
           <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
-            {filtered.map((pin) => (
-              <div key={pin.id} className="mb-4">
+            {filtered.map((pin, i) => (
+              <div key={pin.id} className="mb-4 animate-fade-in-up" style={{ animationDelay: `${Math.min(i, 8) * 60}ms` }}>
                 <PinCard pin={pin} />
               </div>
             ))}
           </div>
         ) : (
-          <div className="rounded-3xl border border-dashed border-border bg-secondary/30 p-16 text-center">
+          <div className="animate-fade-in-up rounded-3xl border border-dashed border-border bg-secondary/30 p-16 text-center">
             <p className="font-display text-lg font-bold text-foreground">
               No pins match that filter
             </p>

@@ -3,13 +3,14 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Reveal from "@/components/Reveal";
 import LocationInput from "@/components/find/LocationInput";
 import PreferenceTags from "@/components/find/PreferenceTags";
 import FreeTextInput from "@/components/find/FreeTextInput";
 import RecommendationCard from "@/components/find/RecommendationCard";
 import { PREFERENCE_CATEGORIES } from "@/components/find/preferenceData";
 import { getRecommendations } from "@/components/find/recommendationService";
-import { Wand2, Loader2, RotateCcw, Sparkles, Utensils, Frown } from "lucide-react";
+import { Wand2, Loader2, RotateCcw, Sparkles, Utensils, Frown, SearchX } from "lucide-react";
 
 const LOADING_MESSAGES = [
   "Tasting the options…",
@@ -88,7 +89,7 @@ export default function Find() {
       <Navbar />
 
       <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-10 sm:px-6 sm:py-14">
-        <div className="mb-10 text-center">
+        <Reveal className="mb-10 text-center">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#FFA500]/20 bg-orange-50 px-4 py-1.5 text-sm font-semibold text-[#FFA500]">
             <Sparkles className="h-4 w-4" />
             Let&apos;s find your match
@@ -99,9 +100,9 @@ export default function Find() {
           <p className="mx-auto mt-3 max-w-md text-muted-foreground">
             The more you share, the better we can match you. Tap the tags that fit.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="space-y-8 rounded-3xl border border-border bg-card p-6 shadow-sm sm:p-8">
+        <Reveal delay={100} className="space-y-8 rounded-3xl border border-border bg-card p-6 shadow-sm sm:p-8">
           <LocationInput value={location} onChange={setLocation} />
 
           <div className="h-px bg-border" />
@@ -119,7 +120,7 @@ export default function Find() {
           <div className="h-px bg-border" />
 
           <FreeTextInput value={freeText} onChange={setFreeText} />
-        </div>
+        </Reveal>
 
         <div className="sticky bottom-4 z-30 mt-6">
           <div className="flex items-center gap-3 rounded-2xl border border-border bg-background/90 p-3 shadow-lg backdrop-blur-xl">
@@ -216,8 +217,21 @@ export default function Find() {
         )}
 
         {!loading && !error && hasSearched && results.length === 0 && (
-          <div className="mt-12 text-center text-muted-foreground">
-            <p>No recommendations came back. Try adjusting your preferences.</p>
+          <div className="animate-fade-in-up mt-12 flex flex-col items-center justify-center rounded-3xl border border-dashed border-border bg-secondary/30 p-10 text-center">
+            <SearchX className="mb-3 h-10 w-10 text-muted-foreground/50" />
+            <p className="font-display text-lg font-bold text-foreground">
+              No matches for that combination
+            </p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Try loosening a filter or two, or broadening your location.
+            </p>
+            <button
+              onClick={handleReset}
+              className="mt-4 inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition-all hover:border-[#FFA500]/40 hover:bg-secondary active:scale-95"
+            >
+              <RotateCcw className="h-4 w-4" />
+              Reset filters
+            </button>
           </div>
         )}
 

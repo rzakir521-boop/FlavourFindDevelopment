@@ -9,9 +9,16 @@ export default function Home() {
       <Navbar />
 
       <section className="relative overflow-hidden">
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(135deg, rgba(255,140,0,0.16) 0%, rgba(255,165,0,0.10) 22%, rgba(255,255,255,0) 55%)",
+          }}
+        />
         <div className="absolute inset-0 grain opacity-60" />
-        <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-orange-200/40 blur-3xl" />
-        <div className="absolute -right-24 top-40 h-80 w-80 rounded-full bg-amber-200/40 blur-3xl" />
+        <div className="absolute -left-24 top-10 h-80 w-80 rounded-full bg-orange-400/40 blur-3xl" />
+        <div className="absolute -right-24 top-40 h-96 w-96 rounded-full bg-amber-300/40 blur-3xl" />
 
         <div className="relative mx-auto max-w-6xl px-4 pb-20 pt-16 sm:px-6 sm:pt-24">
           <div className="mx-auto max-w-3xl text-center">
@@ -22,7 +29,7 @@ export default function Home() {
 
             <h1 className="font-display text-5xl font-extrabold leading-[1.05] tracking-tight text-foreground sm:text-7xl" style={{ textWrap: "balance" }}>
               Find your perfect
-              <span className="block bg-gradient-to-r from-[#FFB84D] via-[#FFA500] to-[#E69500] bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-[#FFC247] via-[#FFA500] to-[#FF8C00] bg-clip-text text-transparent">
                 restaurant in seconds
               </span>
             </h1>
@@ -36,7 +43,7 @@ export default function Home() {
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link
                 href="/find"
-                className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#FFB84D] to-[#FFA500] px-7 py-4 text-base font-bold text-white shadow-lg shadow-orange-500/30 transition-all hover:shadow-xl hover:shadow-orange-500/40 hover:brightness-105 active:scale-95 sm:w-auto"
+                className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#FFC247] to-[#FFA500] px-7 py-4 text-base font-bold text-white shadow-lg shadow-orange-500/30 transition-all hover:shadow-xl hover:shadow-orange-500/40 hover:brightness-105 active:scale-95 sm:w-auto"
               >
                 <Wand2 className="h-5 w-5" />
                 Find Food
@@ -108,7 +115,7 @@ export default function Home() {
                   {s.step}
                 </span>
                 <div className="relative">
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#FFB84D] to-[#FFA500] text-white shadow-md shadow-orange-500/30">
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#FFC247] to-[#FFA500] text-white shadow-md shadow-orange-500/30">
                     <s.icon className="h-6 w-6" />
                   </div>
                   <h3 className="font-display text-xl font-bold text-foreground">{s.title}</h3>

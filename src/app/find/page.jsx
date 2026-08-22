@@ -140,7 +140,7 @@ export default function Find() {
               type="button"
               onClick={handleSearch}
               disabled={!canSearch || loading}
-              className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#FFB84D] to-[#FFA500] px-6 py-3 text-sm font-bold text-white shadow-md shadow-orange-500/30 transition-all hover:brightness-105 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50 sm:flex-none"
+              className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#FFC247] to-[#FFA500] px-6 py-3 text-sm font-bold text-white shadow-md shadow-orange-500/30 transition-all hover:brightness-105 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50 sm:flex-none"
             >
               {loading ? (
                 <>
@@ -160,7 +160,7 @@ export default function Find() {
         {loading && (
           <div className="mt-16 flex flex-col items-center justify-center text-center">
             <div className="relative mb-6">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-[#FFB84D] to-[#FFA500] shadow-lg shadow-orange-500/30">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-[#FFC247] to-[#FFA500] shadow-lg shadow-orange-500/30">
                 <Utensils className="h-9 w-9 text-white" />
               </div>
               <div className="absolute inset-0 animate-ping rounded-full bg-orange-400/30" />

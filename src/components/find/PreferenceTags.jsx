@@ -31,7 +31,7 @@ export default function PreferenceTags({ category, selected, onToggle }) {
               onClick={() => onToggle(category.id, opt.id)}
               className={`rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-200 active:scale-95 ${
                 isSelected
-                  ? "border-transparent bg-gradient-to-r from-[#FFB84D] to-[#FFA500] text-white shadow-md shadow-orange-500/30"
+                  ? "border-transparent bg-gradient-to-r from-[#FFC247] to-[#FFA500] text-white shadow-md shadow-orange-500/30"
                   : "border-border bg-card text-foreground hover:border-[#FFA500]/40 hover:bg-secondary"
               }`}
             >

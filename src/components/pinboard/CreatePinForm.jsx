@@ -169,7 +169,7 @@ export default function CreatePinForm({ open, onClose, onSubmit }) {
                   onClick={() => toggleCuisine(c)}
                   className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition-all active:scale-95 ${
                     selected
-                      ? "border-transparent bg-gradient-to-r from-[#FFB84D] to-[#FFA500] text-white shadow-sm"
+                      ? "border-transparent bg-gradient-to-r from-[#FFC247] to-[#FFA500] text-white shadow-sm"
                       : "border-border bg-background text-foreground hover:border-[#FFA500]/40"
                   }`}
                 >
@@ -193,7 +193,7 @@ export default function CreatePinForm({ open, onClose, onSubmit }) {
         <button
           type="submit"
           disabled={!canSubmit}
-          className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#FFB84D] to-[#FFA500] py-3.5 text-base font-bold text-white shadow-md shadow-orange-500/30 transition-all hover:brightness-105 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#FFC247] to-[#FFA500] py-3.5 text-base font-bold text-white shadow-md shadow-orange-500/30 transition-all hover:brightness-105 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50"
         >
           <Send className="h-4 w-4" />
           Share your pin

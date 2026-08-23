@@ -14,14 +14,39 @@ const body = Plus_Jakarta_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
+const SITE_URL = "https://flavour-find-development.vercel.app";
+const TITLE = "FlavourFind — Find your perfect restaurant in seconds";
+const DESCRIPTION =
+  "AI-powered food discovery. Tell us your cravings, dietary needs and cuisine, and we'll find your perfect restaurant in seconds.";
+
 export const metadata = {
-  title: "FlavourFind — Find your perfect restaurant in seconds",
-  description:
-    "AI-powered food discovery. Tell us your cravings, dietary needs and cuisine, and we'll find your perfect restaurant in seconds.",
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
+  keywords: [
+    "restaurant finder",
+    "food discovery app",
+    "AI restaurant recommendations",
+    "find restaurants near me",
+    "dietary filters restaurants",
+  ],
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
     title: "FlavourFind",
+  },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: SITE_URL,
+    siteName: "FlavourFind",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: TITLE,
+    description: DESCRIPTION,
   },
 };
 

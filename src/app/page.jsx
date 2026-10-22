@@ -61,7 +61,7 @@ export default function Home() {
             <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
               <span className="inline-flex items-center gap-1.5">
                 <ShieldCheck className="h-4 w-4 text-emerald-500" />
-                Allergy-safe filtering
+                Built around what&apos;s nearby
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <Clock className="h-4 w-4 text-[#FFA500]" />
@@ -105,7 +105,7 @@ export default function Home() {
                 icon: Sparkles,
                 step: "03",
                 title: "Discover venues",
-                desc: "Get curated cards with match scores and a personal note on why each fits.",
+                desc: "Get real restaurants near you that fit your tastes, with a map link for each one.",
               },
             ].map((s, i) => (
               <Reveal key={s.step} delay={i * 100}>
